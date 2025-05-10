@@ -1,11 +1,14 @@
 <main>
     <section>
-        <ul>
-            <li *ngFor="let post of posts">
-                <img> [src]="post.image" alt="{{ post.title }}" />
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.body }}</p>
-            </li>
-        </ul>
+        <div *ngFor="let post of posts" class="post">
+            <h2>{{ post.title }}</h2>
+            <p class="post-date">
+                {{ post.createdAt | date: 'longDate' }}
+            </p>
+            <img [src]="post.image" alt="{{ post.title }}" class="post-image" />
+            <p class="post-body">
+                {{ post.body}}
+            </p>
+        </div>
     </section>
 </main>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { PostService, Post } from '../../services/post.service';
+import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
+import { Post } from '../../interfaces/post';
 
 @Component({
   selector: 'app-posts',
@@ -15,7 +16,11 @@ export class PostsComponent {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.postService.getPosts().subscribe(data => {
+    this.getPosts();
+  }
+
+  getPosts() {
+    this.postService.getPosts().subscribe((data: Post[]) => {
       this.posts = data;
     });
   }
