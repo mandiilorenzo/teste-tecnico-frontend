@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post {
+    max-width: 400px;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+}
+
