@@ -20,4 +20,8 @@ export class PostService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Post>(url);
   }
+
+  createPost(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.apiUrl, post);
+  }
 }
