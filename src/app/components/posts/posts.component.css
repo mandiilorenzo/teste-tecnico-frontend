@@ -46,6 +46,7 @@
         margin-bottom: 20px;
         position: relative;
         font-size: 14px;
+        cursor: pointer;
     }
 }
 
@@ -121,4 +122,48 @@
     font-size: 20px;
     line-height: 1.5;
     max-height: 120px;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        h1 {
+            font-size: 32px;
+        }
+    }
+    
+    .sidebar {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        h1 {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+    }
+
+    .post {
+        max-width: 340px;
+    }
+    
+    .post-info {
+        padding: 10px;
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    .post-body {
+        max-height: 80px;
+    }
 }

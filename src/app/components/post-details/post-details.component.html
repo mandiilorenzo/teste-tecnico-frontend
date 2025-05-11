@@ -1,13 +1,17 @@
-<main *ngIf="post; else loading">
-    <article>
+<main class="container" *ngIf="post; else loading">
+    <div class="content">
         <h1>{{post.title}}</h1>
-        <p>{{ post.createdAt | date: 'longDate'}}</p>
-        <img [src]="post.image" alt="{{ post.title }}" class="post-image" />
-        <p class="post-body">
-            {{ post.body }}
-        </p>
-        <a routerLink="/posts">Voltar à listagem de posts</a>
-    </article>
+        <article class="post-details">
+            <img [src]="post.image" alt="{{ post.title }}" />
+            <div class="post-info">
+                <p>{{ post.createdAt | date: 'longDate'}}</p>
+                <p class="post-body">
+                    {{ post.body }}
+                </p>
+                <a routerLink="/posts">Voltar à listagem de posts</a>
+            </div>
+        </article>
+    </div>
 </main>
 
 <ng-template #loading>
