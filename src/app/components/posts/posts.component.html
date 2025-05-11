@@ -1,8 +1,14 @@
-<main>
-    <section class="container">
-        <div>
-            <ul *ngFor="let post of posts" class="post">
-                <li><img [src]="post.image" alt="{{ post.title }}" class="post-image" /></li>
+<header class="header">
+    <h1>Exibindo resultados de busca por "Notícias"</h1>
+    <h2>Total de resultados para a sua busca</h2>
+</header>
+
+<main class="container">
+    <section class="cards">
+        <ul *ngFor="let post of posts" class="post">
+            <li><img [src]="post.image" alt="{{ post.title }}" /></li>
+
+            <div class="post-info">
                 <li>
                     <h2>{{ post.title }}</h2>
                 </li>
@@ -14,7 +20,21 @@
                 <a [routerLink]="['/posts', post.id]">
                     Ler mais
                 </a>
-            </ul>
-        </div>
+            </div>
+        </ul>
     </section>
+
+    <div class="sidebar">
+        <h3>Categorias</h3>
+        <p>Lorem ipsum dolor</p>
+        <p>Lorem ipsum dolor</p>
+        <p>Lorem ipsum dolor</p>
+        <p>Lorem ipsum dolor</p>
+
+        <h3>Procurando alguma notícia?</h3>
+        <div class="search">
+            <input type="text" placeholder="Pesquisar por..." />
+            <i class="fa fa-search icon"></i>
+        </div>
+    </div>
 </main>
