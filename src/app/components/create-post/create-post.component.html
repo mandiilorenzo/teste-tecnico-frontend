@@ -25,7 +25,14 @@
                 [class.is-invalid]="postForm.get('body')?.invalid && postForm.get('body')?.touched"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid || isSubmitting">
+        <div class="form-group">
+            <label for="createdAt">Data de Criação</label>
+            <input id="createdAt" type="date" formControlName="createdAt" class="form-control"
+                [class.is-invalid]="postForm.get('createdAt')?.invalid && postForm.get('createdAt')?.touched" />
+        </div>
+
+
+        <button type="submit" class="btn" [disabled]="postForm.invalid || isSubmitting">
             {{ isSubmitting ? 'Cadastrando...' : 'Cadastrar Notícia' }}
         </button>
 
