@@ -11,18 +11,27 @@
             <label for="title">Título</label>
             <input id="title" type="text" formControlName="title" class="form-control"
                 [class.is-invalid]="postForm.get('title')?.invalid && postForm.get('title')?.touched" />
+            <div *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched" class="text-danger">
+                O título é obrigatório.
+            </div>
         </div>
 
         <div class="form-group">
             <label for="image">URL da Imagem</label>
             <input id="image" type="text" formControlName="image" class="form-control"
                 [class.is-invalid]="postForm.get('image')?.invalid && postForm.get('image')?.touched" />
+            <div *ngIf="postForm.get('image')?.invalid && postForm.get('image')?.touched" class="text-danger">
+                A URL da imagem é obrigatória.
+            </div>
         </div>
 
         <div class="form-group">
             <label for="body">Corpo da Notícia</label>
             <textarea id="body" rows="5" formControlName="body" class="form-control"
                 [class.is-invalid]="postForm.get('body')?.invalid && postForm.get('body')?.touched"></textarea>
+            <div *ngIf="postForm.get('body')?.invalid && postForm.get('body')?.touched" class="text-danger">
+                O corpo da notícia é obrigatório.
+            </div>
         </div>
 
         <div class="form-group">
@@ -32,9 +41,10 @@
         </div>
 
 
-        <button type="submit" class="btn" [disabled]="postForm.invalid || isSubmitting">
+        <button type="submit" class="btn" [disabled]="isSubmitting">
             {{ isSubmitting ? 'Cadastrando...' : 'Cadastrar Notícia' }}
         </button>
-
     </form>
+
+    <a routerLink="/posts">Voltar à listagem de posts</a>
 </main>
